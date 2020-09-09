@@ -2,7 +2,7 @@
 ## Grade Points (GPA / CGPA) Calculator with React Native
 (My vey first React Native Project 😊)
 
-## [⏬ APK Download](app-armeabi-v7a-release.apk)
+>## [⏬ APK Download](app-armeabi-v7a-release.apk)
 
 <p>
 <img src="android/screenshots/1.png" width=200 style="margin:15px">
