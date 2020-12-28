@@ -61,3 +61,6 @@ buck-out/
 /ios/Pods/
 
 icon/
+python-log.txt
+android/hs_err_pid7108.log
+android/replay_pid7108.log
