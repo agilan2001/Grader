@@ -40,8 +40,8 @@ const ItemCard = ({ i, e, tocalc, cred_txtchange, sub_txtchange, delItem, pnt_tx
     <Animatable.View ref={thisref}>
       <Surface style={{ borderRadius: 20, margin: 10, elevation: 5, padding: 20, backgroundColor: 'white' }}>
 
-        <TextInput editable={tocalc=='gpa'} dense="true" style={{ marginBottom: 10, backgroundColor: Colors.white }}
-          placeholder={(tocalc == 'gpa' ?'SUBJECT  ':'SEMESTER  ') + (i + 1)}
+        <TextInput editable={tocalc == 'gpa'} dense="true" style={{ marginBottom: 10, backgroundColor: Colors.white }}
+          placeholder={(tocalc == 'gpa' ? 'SUBJECT  ' : 'SEMESTER  ') + (i + 1)}
           onChangeText={(text) => { sub_txtchange(text, i) }} value={e.sub} />
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' }}>
           <TextInput dense="true" mode="outlined"
@@ -94,6 +94,10 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
     setst(cur)
   }
 
+  const autofill = ()=>{
+
+  }
+
   const calc = () => {
     var sop = 0, sc = 0;
     st.forEach((e, i) => {
@@ -134,8 +138,9 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
   return (
     <>
       <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 20, marginBottom: 10 }}>
-        <Button icon="plus" style={{ width: 150 }} mode="contained" onPress={addsub}>{tocalc == 'cgpa' ? 'SEMESTER' : 'SUBJECT'}</Button>
-        <Button icon='calculator' style={{ width: 150 }} mode="contained" onPress={calc}>CALCULATE</Button>
+        <Button icon="flash-auto" style={{ width: 120 }} mode="contained" onPress={autofill}>AUTOFILL</Button>
+        <Button icon="plus" style={{ width: 130 }} mode="contained" onPress={addsub}>{tocalc == 'cgpa' ? 'SEMESTER' : 'SUBJECT'}</Button>
+        <Button icon='calculator' style={{ width: 130 }} mode="contained" onPress={calc}>CALCULATE</Button>
       </View>
       <ScrollView
         ref={scrollViewRef} style={{ marginBottom: 20 }}
@@ -235,7 +240,7 @@ const App = () => {
   const storeData = async (sdata, toudp) => {
     try {
       console.log('hist' + JSON.stringify(hist))
-      var temp = {...hist};
+      var temp = { ...hist };
       temp[toudp].push(JSON.parse(JSON.stringify(sdata)));
       console.log('temp :' + JSON.stringify(temp))
       sethist(temp);
