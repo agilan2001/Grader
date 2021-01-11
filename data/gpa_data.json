@@ -1,0 +1,233 @@
+{
+    "data": {
+        "Anna University - UD": {
+            "Electronics and Communication": {
+                "sem1": {
+                    "Foundational English": "4",
+                    "Mathematics - I": "4",
+                    "Engineering Physics": "3",
+                    "Engineering Chemistry": "3",
+                    "Computing Techniques": "3",
+                    "Basic Science Lab": "2",
+                    "Computer Practices Lab": "2"
+                },
+                "sem2": {
+                    "Technical English": "4",
+                    "Mathematics - II": "4",
+                    "Physics for ECE": "3",
+                    "Circuit Theroy": "3",
+                    "Electronic Devices": "3",
+                    "Engineering Graphics": "4",
+                    "Electronic Devices and Circuits Lab": "2",
+                    "Engineering Practices Lab": "2"
+                },
+                "sem3": {
+                    "Electronic Circuits I": "3",
+                    "Data Structures and OOP with C++": "4",
+                    "Digital Electronics and System Design": "3",
+                    "Signals and Systems": "3",
+                    "Basics of Electrical Engineering": "3",
+                    "Transform Techniques": "4",
+                    "Digital Electronics and Circuits Lab": "2",
+                    "Electrical Engineering Lab": "2"
+                },
+                "sem4": {
+                    "Communication Theory": "3",
+                    "Electromagnetic Fields and Waves": "3",
+                    "Electronic Circuits - II": "3",
+                    "Microprocessors and Microcontrollers": "3",
+                    "Linear Algebra and Numerical Methods": "4",
+                    "Operational Amplifiers and Analog IC": "3",
+                    "Electronic Circuits II Lab": "2",
+                    "Microcontroller and Interfacing Lab": "2"
+                },
+                "sem5": {
+                    "Control System Engineering": "3",
+                    "Digital Communication Techniques": "3",
+                    "Transmission Lines and Waveguides": "3",
+                    "Computer Architecture and Organisation": "3",
+                    "Discrete Time Signal Processing": "3",
+                    "Professional Elective I": "3",
+                    "Communication System Lab": "2",
+                    "Discete Time Signal Processing Lab": "2",
+                    "Seminar": "1"
+                },
+                "sem6": {
+                    "Antennas and Wave Propagation": "3",
+                    "Communication Networks": "3",
+                    "RF and Microwave Communication": "3",
+                    "VLSI design": "3",
+                    "Prinicples of Management": "3",
+                    "Open Elective I": "3",
+                    "RF and Microwave Lab": "2",
+                    "VLSI Lab": "2",
+                    "Comprehension": "1"
+                },
+                "sem7": {
+                    "Optical Communication": "3",
+                    "Wireless Communication": "3",
+                    "Principles of Digital Image Processing": "3",
+                    "Enviromental Science and Engineering": "3",
+                    "Professional Elective II": "3",
+                    "Open Elective II": "3",
+                    "Optical Communication Lab": "2",
+                    "Wireless Communication and Networking Lab": "2",
+                    "Mini Project": "2"
+                },
+                "sem8": {
+                    "Professional Elective III": "3",
+                    "Professional Elective IV": "3",
+                    "Professional Elective V": "3",
+                    "Project Work": "10"
+                }
+            }, 
+
+
+            "Information Technology": {
+                "sem1": {
+                    "Foundational English": "4",
+                    "Mathematics - I": "4",
+                    "Engineering Physics": "3",
+                    "Engineering Chemistry": "3",
+                    "Computing Techniques": "3",
+                    "Basic Science Lab": "2",
+                    "Computer Practices Lab": "2"
+                },
+                "sem2": {
+                    "Technical English": "4",
+                    "Mathematics - II": "4",
+                    "Physics for IT": "3",
+                    "Data Structures": "3",
+                    "Information Technology Essentials": "3",
+                    "Engineering Graphics": "4",
+                    "IT Essentials and Data Structures Lab": "2",
+                    "Engineering Practices Lab": "2"
+                },
+                "sem3": {
+                    "Environmental Science and Engineering": "3",
+                    "Database Systems": "3",
+                    "Digital Communication": "3",
+                    "Object Oriented Programming": "3",
+                    "Digital Principles and Design": "3",
+                    "Probability and Queing Theory": "4",
+                    "Digital and Database Systems Lab": "2",
+                    "Object Oriented Programming Lab": "2"
+                },
+                "sem4": {
+                    "Software Engineering": "3",
+                    "Computer Architecture": "4",
+                    "Operating Systems": "3",
+                    "Algorithmics": "3",
+                    "Web Technology": "3",
+                    "Discrete Mathematics": "4",
+                    "Operating Systems Lab": "2",
+                    "Web Technology Lab": "2"
+                },
+                "sem5": {
+                    "Compiler Engineering": "3",
+                    "Computer Networks": "3",
+                    "Embeded Systems": "3",
+                    "Unix Internals": "3",
+                    "Open Elective - I": "3",
+                    "Professional Elective I": "3",
+                    "Computer Networks Lab": "2",
+                    "Embedded Systems Lab": "2",
+                    "Socially Relevant Project": "1"
+                },
+                "sem6": {
+                    "Information Security": "3",
+                    "Integrated Programming": "3",
+                    "Mobile Computing": "3",
+                    "Parallel and Distributed Systems": "3",
+                    "Professional Elective - II": "3",
+                    "Open Elective II": "3",
+                    "Information Security and Mobile Computing Lab": "2",
+                    "Integrated Programming Lab": "2",
+                    "Creative Project": "1"
+                },
+                "sem7": {
+                    "Computer Graphics and Mulitmedia": "3",
+                    "Data Analytics": "3",
+                    "Knowledge Engineering and Intelligent Systems": "3",
+                    "Principles of Human Computer Interactions": "3",
+                    "Professional Elective III": "3",
+                    "Professional Elective IV": "3",
+                    "Graphics and Multimedia Lab": "2",
+                    "Mini Project": "2"
+                },
+                "sem8": {
+                    "Professional Elective V": "3",
+                    "Professional Elective VI": "3",
+                    "Professional Elective VII": "3",
+                    "Project Work": "10"
+                }
+            },
+            "Computer Science":{
+                "sem1":{},
+                "sem2":{},
+                "sem3":{},
+                "sem4":{},
+                "sem5":{},
+                "sem6":{},
+                "sem7":{},
+                "sem8":{}
+
+            },
+            "Mechanical":{
+                "sem1":{},
+                "sem2":{},
+                "sem3":{},
+                "sem4":{},
+                "sem5":{},
+                "sem6":{},
+                "sem7":{},
+                "sem8":{}
+
+            },
+            "Automobile":{
+                "sem1":{},
+                "sem2":{},
+                "sem3":{},
+                "sem4":{},
+                "sem5":{},
+                "sem6":{},
+                "sem7":{},
+                "sem8":{}
+
+            },
+            "Aeronautical":{
+                "sem1":{},
+                "sem2":{},
+                "sem3":{},
+                "sem4":{},
+                "sem5":{},
+                "sem6":{},
+                "sem7":{},
+                "sem8":{}
+
+            },
+            "Electronics and Instrumentation":{
+                "sem1":{},
+                "sem2":{},
+                "sem3":{},
+                "sem4":{},
+                "sem5":{},
+                "sem6":{},
+                "sem7":{},
+                "sem8":{}
+
+            },
+            "Electricals and Electronics":{
+                "sem1":{},
+                "sem2":{},
+                "sem3":{},
+                "sem4":{},
+                "sem5":{},
+                "sem6":{},
+                "sem7":{},
+                "sem8":{}
+
+            }
+        }
+    }
+}
