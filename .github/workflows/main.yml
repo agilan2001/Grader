@@ -6,7 +6,7 @@ on:
 jobs:
   build-android:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - name: Install npm dependencies
         run: |
@@ -19,3 +19,7 @@ jobs:
         with:
           name: app-armeabi-v7a-release.apk
           path: android/app/build/outputs/apk/release/app-armeabi-v7a-release.apk
+      - name: Download the apk
+        uses: actions/download-artifact@v2
+        with:
+          name: app-armeabi-v7a-release.apk

@@ -28,6 +28,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import * as Animatable from 'react-native-animatable';
 
 import SplashScreen from 'react-native-splash-screen';
+import { Picker } from '@react-native-picker/picker'
 
 
 
@@ -38,9 +39,9 @@ const ItemCard = ({ i, e, tocalc, cred_txtchange, sub_txtchange, delItem, pnt_tx
 
   return (
     <Animatable.View ref={thisref}>
-      <Surface style={{ borderRadius: 20, margin: 10, elevation: 5, padding: 20, backgroundColor: 'white' }}>
+      <Surface style={{ borderRadius: 20, margin: 10, elevation: 5, padding: 20, backgroundColor: 'lightyellow' }}>
 
-        <TextInput editable={tocalc == 'gpa'} dense="true" style={{ marginBottom: 10, backgroundColor: Colors.white }}
+        <TextInput editable={tocalc == 'gpa'} dense="true" style={{ marginBottom: 10, backgroundColor: 'transparent', fontWeight:'bold' }}
           placeholder={(tocalc == 'gpa' ? 'SUBJECT  ' : 'SEMESTER  ') + (i + 1)}
           onChangeText={(text) => { sub_txtchange(text, i) }} value={e.sub} />
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' }}>
@@ -68,7 +69,13 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
   const [resTxt, setresTxt] = useState("");
   const [nametxt, setnametxt] = useState("");
 
+  const [autofillVis, setAutofillVis] = useState(false);
+  const [colPickState, setColPickState] = useState("");
+  const [deptPickState, setDeptPickState] = useState("");
+  const [semPickState, setSemPickState] = useState("sem4");
+
   const key_val = useRef(0);
+  const autofillData = useRef({ data: {} });
 
   const addsub = () => {
     //alert(1)
@@ -94,7 +101,50 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
     setst(cur)
   }
 
-  const autofill = ()=>{
+  const showAutofill = async () => {
+    fetch("https://github.com/agilan2001/Grader/raw/master/data/gpa_data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        autofillData.current = data.data;
+        var temp = Object.keys(data.data)[0];
+        if (!colPickState) setColPickState(temp);
+        if (!deptPickState) setDeptPickState(Object.keys(data.data[temp])[0]);
+        setAutofillVis(true);
+      });
+
+
+
+  }
+
+  const autofill = () => {
+    var data = autofillData.current[colPickState][deptPickState];
+
+    var new_st = [];
+    if (tocalc == 'gpa') {
+      Object.keys(data[semPickState]).forEach((e, i) => {
+        new_st.push({
+          sub: e,
+          cred: data[semPickState][e],
+          pnt: ""
+        })
+      });
+    } else {
+      
+      for (var i = 1; i <= parseInt(semPickState.replace(/\D/g,'')); i++) {
+        var tot = 0;
+        Object.keys(data["sem" + i]).forEach((e, k) => {
+          tot += parseInt(data["sem" + i][e]);
+        });
+
+        new_st.push({
+          sub: "",
+          cred: tot.toString(),
+          pnt: ""
+        })
+        
+      }
+    }
+    setst(new_st);
 
   }
 
@@ -136,10 +186,10 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
   }, [list, tocalc])
   const scrollViewRef = useRef();
   return (
-    <>
+    <View style={{backgroundColor:tocalc=='gpa'?'lightgreen':'lightblue', flex:1}}>
       <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 20, marginBottom: 10 }}>
-        <Button icon="flash-auto" style={{ width: 120 }} mode="contained" onPress={autofill}>AUTOFILL</Button>
-        <Button icon="plus" style={{ width: 130 }} mode="contained" onPress={addsub}>{tocalc == 'cgpa' ? 'SEMESTER' : 'SUBJECT'}</Button>
+        <Button icon="flash-auto" style={{ width: 120, backgroundColor:'blue' }} mode="contained" onPress={showAutofill}>AUTOFILL</Button>
+        <Button icon="plus" style={{ width: 130, backgroundColor:'orange' }} mode="contained" onPress={addsub}>{tocalc == 'cgpa' ? 'SEMESTER' : 'SUBJECT'}</Button>
         <Button icon='calculator' style={{ width: 130 }} mode="contained" onPress={calc}>CALCULATE</Button>
       </View>
       <ScrollView
@@ -150,6 +200,24 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
         ))}
       </ScrollView>
       <Portal>
+        <Dialog style={{ backgroundColor: 'yellow' }} visible={autofillVis} onDismiss={() => { setAutofillVis(false); }}>
+          <Dialog.Content>
+            <Title style={{ textAlign: 'center' }}>AUTOFILL</Title>
+            <Picker selectedValue={colPickState} onValueChange={(e, i) => setColPickState(e)}>
+              {Object.keys(autofillData.current).map((e, i) => (<Picker.Item key={key_val.current + "clg" + i} label={e} value={e} />))}
+            </Picker>
+            <Picker selectedValue={deptPickState} onValueChange={(e, i) => setDeptPickState(e)}>
+              {colPickState && Object.keys(autofillData.current[colPickState]).map((e, i) => (<Picker.Item key={key_val.current + "dept" + i} label={e} value={e} />))}
+            </Picker>
+            <Picker selectedValue={semPickState} onValueChange={(e, i) => setSemPickState(e)}>
+              {colPickState && deptPickState && [...Array(8).keys()].map((e, i) => (<Picker.Item key={key_val.current + "sem" + i} label={"SEMESTER " + (e + 1)} value={"sem" + (e + 1)} />))}
+            </Picker>
+          </Dialog.Content>
+          <Dialog.Actions>
+            <Button onPress={() => { setAutofillVis(false); }}>CANCEL</Button>
+            <Button onPress={() => { autofill(); setAutofillVis(false); }}>OK</Button>
+          </Dialog.Actions>
+        </Dialog>
         <Dialog style={{ backgroundColor: 'lightblue' }} visible={resTxt} onDismiss={() => { setresTxt(""); }}>
           <Dialog.Content>
             <Title style={{ textAlign: 'center' }}>{tocalc == 'cgpa' ? 'C' : ''}GPA</Title>
@@ -158,7 +226,6 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
           <Dialog.Actions>
             <Button onPress={() => { setnametxt((tocalc == 'gpa' ? 'GPA (' : 'CGPA (') + new Date().toLocaleDateString("en-US") + ')'); setsaveVis(true); setresTxt("") }}>SAVE</Button>
             <Button onPress={() => { setresTxt(""); }}>OK</Button>
-
           </Dialog.Actions>
         </Dialog>
         <Dialog style={{ backgroundColor: 'orange' }} visible={saveVis} onDismiss={() => { setsaveVis(false); }}>
@@ -174,7 +241,7 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
         </Dialog>
 
       </Portal>
-    </>
+    </View>
 
   )
 }
