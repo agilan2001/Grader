@@ -188,9 +188,9 @@ const CalcCont = ({ tocalc, list, storefunc, navigation }) => {
   return (
     <View style={{backgroundColor:tocalc=='gpa'?'lightgreen':'lightblue', flex:1}}>
       <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 20, marginBottom: 10 }}>
-        <Button icon="flash-auto" style={{ width: 120, backgroundColor:'blue' }} mode="contained" onPress={showAutofill}>AUTOFILL</Button>
-        <Button icon="plus" style={{ width: 130, backgroundColor:'orange' }} mode="contained" onPress={addsub}>{tocalc == 'cgpa' ? 'SEMESTER' : 'SUBJECT'}</Button>
-        <Button icon='calculator' style={{ width: 130 }} mode="contained" onPress={calc}>CALCULATE</Button>
+        <Button icon="flash-auto" style={{ width: 80, backgroundColor:'blue' }} mode="contained" onPress={showAutofill}>AUTO</Button>
+        <Button icon="plus" style={{ width: 120, backgroundColor:'orange' }} mode="contained" onPress={addsub}>{tocalc == 'cgpa' ? 'SEMESTER' : 'SUBJECT'}</Button>
+        <Button icon='calculator' style={{ width: 120 }} mode="contained" onPress={calc}>CALCULATE</Button>
       </View>
       <ScrollView
         ref={scrollViewRef} style={{ marginBottom: 20 }}
