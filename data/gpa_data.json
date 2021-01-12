@@ -163,14 +163,59 @@
                 }
             },
             "Computer Science":{
-                "sem1":{},
-                "sem2":{},
-                "sem3":{},
-                "sem4":{},
-                "sem5":{},
-                "sem6":{},
-                "sem7":{},
-                "sem8":{}
+                "sem1":{
+                    "Technical English I":"5",
+                    "Engineering Physics":"5",
+                    "Mathematics I":"5",
+                    "Programming with C":"6",
+                    "Computational Thinking":"3"
+                },
+                "sem2":{
+                    "Technical English II":"5",
+                    "Engineering Chemistry":"5",
+                    "Discrete Mathematics":"5",
+                    "Engineering Graphics":"5",
+                    "Application Development Practices":"5"
+                },
+                "sem3":{
+                    "Data Structures and Algorithms":"7",
+                    "Digital Fundamentals and Computer Organization":"7",
+                    "Probability and Statistics":"5",
+                    "Basics of Electrical and Electronics Engineering":"7",
+                    "Open Elective I":"3"
+                },
+                "sem4":{
+                    "Database Management Systems":"6",
+                    "Computer Architecture":"5",
+                    "Operating Systems":"6",
+                    "Mathematics Soft Cor5e I":"5",
+                    "Open Elective II":"3"
+                },
+                "sem5":{
+                    "Compiler Design":"6",
+                    "Object Oriented Analysis and Design":"6",
+                    "Computer Networks":"6",
+                    "Mathematics Soft Core II":"6",
+                    "Professional Soft Core I":"6"
+                },
+                "sem6":{
+                    "Professional Soft Core II":"6",
+                    "Professional Soft Core III":"6",
+                    "Professional Soft Core IV":"6",
+                    "Professional Elective I":"4",
+                    "Creative and Innovative Project":"3"
+                },
+                "sem7":{
+                    "Professional Elective II":"4",
+                    "Professional Elective III":"4",
+                    "Professional Elective IV":"4",
+                    "Professional Elective V":"4"
+                },
+                "sem8":{
+                    "Professional Elective VI":"4",
+                    "Professional Elective VII":"4",
+                    "Project Work":"9"
+                }
 
             },
             "Mechanical":{
